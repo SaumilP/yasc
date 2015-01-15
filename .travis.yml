@@ -12,7 +12,7 @@ env:
 addons:
   coverity_scan:
     project:
-      name: "SaumilP/design-patterns"
+      name: "SaumilP/yasc"
       description: "Build submitted via Travis CI"
       notification_email: saumilpatel1@gmail.com
       build_command_prepend: "mvn clean"

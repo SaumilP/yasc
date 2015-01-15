@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/SaumilP/yasc.svg)](https://travis-ci.org/SaumilP/yasc)
+<a href="https://scan.coverity.com/projects/3934">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/3934/badge.svg"/>
+</a>
+
 YASC
 ===================
 

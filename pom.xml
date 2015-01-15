@@ -39,7 +39,6 @@
 
     <modules>
         <module>yasc-service</module>
-        <module>yasc-client</module>
         <module>yasc-core</module>
     </modules>
 
