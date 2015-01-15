@@ -1,23 +1,25 @@
 package org.saumilp.sandcastle.health;
 
 import com.codahale.metrics.health.HealthCheck;
-import com.example.helloworld.core.Template;
-import com.google.common.base.Optional;
 
 /**
- * Template Health Check Class
+ * Template Health Check Class for the Application
+ *
+ * TODO Adjust Health Check class to use custom POJO
  */
 public class TemplateHealthCheck extends HealthCheck {
-    private final Template template;
+    private final String template;
 
-    public TemplateHealthCheck(Template template) {
+    public TemplateHealthCheck(String template) {
         this.template = template;
     }
 
     @Override
     protected Result check() throws Exception {
-        template.render(Optional.of("woo"));
-        template.render(Optional.<String>absent());
+        final String blah = String.format(template, "TEST");
+        if(!blah.contains("TEST")){
+            return Result.unhealthy("Template cannot include name");
+        }
         return Result.healthy();
     }
 }

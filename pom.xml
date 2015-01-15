@@ -30,7 +30,7 @@
         <apache.maven.dependency-plugin.version>2.8</apache.maven.dependency-plugin.version>
         <apache.maven-surefire-report-plugin.version>2.9</apache.maven-surefire-report-plugin.version>
         <findbugs.maven.version>2.5.2</findbugs.maven.version>
-        <maven.shade.version>1.6</maven.shade.version>
+        <maven.shade.version>2.3</maven.shade.version>
         <dropwizard.core>0.7.1</dropwizard.core>
         <commons.lang>3.3.2</commons.lang>
         <findbugs.includefilter.xml />
@@ -90,6 +90,11 @@
                 <artifactId>dropwizard-core</artifactId>
                 <version>${dropwizard.core}</version>
             </dependency>
+            <dependency>
+                <groupId>io.dropwizard</groupId>
+                <artifactId>dropwizard-auth</artifactId>
+                <version>${dropwizard.core}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -98,10 +103,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.0</version>
+                <version>3.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -168,6 +174,40 @@
                         <goals>
                             <goal>sources</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven.shade.version}</version>
+                <configuration>
+                    <createDependencyReducedPom>true</createDependencyReducedPom>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/*.SF</exclude>
+                                <exclude>META-INF/*.DSA</exclude>
+                                <exclude>META-INF/*.RSA</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>org.saumilp.sandcastle.controllers.HomeController</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

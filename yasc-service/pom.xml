@@ -8,6 +8,7 @@
         <groupId>org.saumilp.sandcastle</groupId>
         <artifactId>yasc</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>yasc-service</artifactId>
@@ -16,8 +17,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.yammer.dropwizard</groupId>
+            <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.saumilp.sandcastle</groupId>

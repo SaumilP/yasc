@@ -1,7 +1,6 @@
 package org.saumilp.sandcastle.configurations;
 
-import com.yammer.dropwizard.config.Configuration;
-
+import io.dropwizard.Configuration;
 /**
  * Main Application Configuration for associated service
  */
