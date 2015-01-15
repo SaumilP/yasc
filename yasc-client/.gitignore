@@ -1,0 +1,6 @@
+node_modules
+target
+.tmp
+.sass-cache
+npm-debug.log
+app/bower_components/
