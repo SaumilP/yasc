@@ -17,5 +17,18 @@ Yet Another SOAP Client - provides a thin web client to generate SOAP requests a
 
 ### REQUIREMENTS
 
-Platform : Java
-Technology : Dropwizard, AngularJS, NGINX
+Platform : Java 7 or Java 8
+Tools : Maven 3+, NodeJS, Bower, Grunt
+Technology Stack : Dropwizard, AngularJS, NGINX
+
+### INSTALATION
+
+- Install [Bower](http://bower.io/)
+```
+npm install -g bower
+```
+- Download Project Dependencies
+```
+cd yasc-client
+bower install
+```
