@@ -4,8 +4,8 @@
        src="https://scan.coverity.com/projects/3934/badge.svg"/>
 </a>
 
-YASC
-===================
+YASC - Yet Another SOAP Client
+==============================
 
 ### STATUS
 Initial phase
@@ -31,4 +31,9 @@ npm install -g bower
 ```
 cd yasc-client
 bower install
+```
+
+- Install [grunt-bower-task](http://bower.io/docs/tools/)
+```
+npm install grunt-bower
 ```
