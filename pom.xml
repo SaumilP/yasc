@@ -24,7 +24,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>4.11</junit.version>
         <hamcrest.version>1.3</hamcrest.version>
-        <apache.commons.collections>3.2.1</apache.commons.collections>
+        <apache.commons.collections>3.2.2</apache.commons.collections>
         <slf4j.api.version>1.7.5</slf4j.api.version>
         <slf4j.jdk14.version>1.7.5</slf4j.jdk14.version>
         <apache.maven.dependency-plugin.version>2.8</apache.maven.dependency-plugin.version>
